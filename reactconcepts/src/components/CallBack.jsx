@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CallBack({ getCol }) {
+function CallBack({ getCol, isColored }) {
   const [color, setColor] = useState("");
 
   const handleChange = (ev) => {
@@ -15,6 +15,12 @@ function CallBack({ getCol }) {
         Enter color:
         <input type="text" value={color} onChange={handleChange} />
       </label>
+      <p>La couleur sélectionnée est : {color}</p>
+      <p>
+        {isColored
+          ? "La couleur sera appliquée."
+          : "La couleur ne sera pas appliquée."}
+      </p>
     </form>
   );
 }
