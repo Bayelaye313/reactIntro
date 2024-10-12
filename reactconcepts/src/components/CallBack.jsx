@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CallBack({ getCol, isColored }) {
+function CallBack({ getCol, isColored, addCol }) {
   const [color, setColor] = useState("");
 
   const handleChange = (ev) => {
@@ -8,6 +8,9 @@ function CallBack({ getCol, isColored }) {
     setColor(value);
     console.log("val", value);
     getCol(value);
+    if (value.length > 3) {
+      addCol(value);
+    }
   };
   return (
     <form>
