@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Counter from './components/uiComponents/Counter';
 import Welcome from './components/uiComponents/Welcome';
@@ -7,7 +6,7 @@ import CallBack from './components/uiComponents/CallBack';
 import ListColors from './ListColors';
 import Button from './components/uiComponents/Button';
 
-function App() {
+function AppUiConcept() {
   
   const [Uicolor , setUiColor] = useState('')
   const [isColored, setIsColored] = useState(false)
@@ -37,7 +36,7 @@ function App() {
     <div className='App'>
       {/* description de l'interface utilisateur */}
       <div>
-      {/* <div className='conteneur' style={{background: isColored ? Uicolor : 'white' }}>
+      <div className='conteneur' style={{background: isColored ? Uicolor : 'white' }}>
       <p>Couleur de fond : {isColored ? Uicolor : "Pas de couleur appliquée"}</p>
       <div>
       <p> list des Couleurs :</p>
@@ -45,10 +44,10 @@ function App() {
       </div>
       </div>
       <CallBack isColored = {isColored} getCol = {getColor} addCol = {addColor} />
-      <Button onClick={toggleColor}> {isColored ? 'remove color' : 'make color' } </Button> */}
+      <Button onClick={toggleColor}> {isColored ? 'remove color' : 'make color' } </Button>
 
       </div>
-      
+
       {/* description de l'interface utilisateur */}
 
       
@@ -57,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppUiConcept;
