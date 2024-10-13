@@ -4,11 +4,12 @@ function CallBack({ getCol, isColored, addCol }) {
   const [color, setColor] = useState("");
 
   const handleChange = (ev) => {
+    ev.preventDefault();
     const { value } = ev.target;
     setColor(value);
     console.log("val", value);
     getCol(value);
-    if (value.length > 3) {
+    if (value.length > 2) {
       addCol(value);
     }
   };
