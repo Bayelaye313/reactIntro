@@ -1,3 +1,4 @@
+import Counter from './addInteractivity/Counter';
 import Gallery from './addInteractivity/Gallery';
 import './App.css';
 import { useState } from 'react';
@@ -10,7 +11,8 @@ function AppReactivityConcept() {
 
       {/* description de l'interface utilisateur */}
 
-      <Gallery/>
+      {/* <Gallery/> */}
+      <Counter/>
 
     </div>
   );
