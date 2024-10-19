@@ -38,7 +38,7 @@ h1 {
 
 .todo-input {
   outline: none;
-  background: none;
+  background: transparent;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
@@ -69,11 +69,20 @@ h1 {
   border-radius: 5px;
   margin-bottom: 1rem;
 }
-
+.icons{
+  padding: 0.3rem;
+  background-color:#7850dd;
+}
 .fa-trash {
   margin-left: 0.75rem;
 }
-
+.delete-icon{
+  background-color: rgb(112, 12, 12);
+  margin-right: 0.3rem;
+}
+.edit-icon{
+  background-color: rgb(25, 100, 25);
+}
 .incompleted {
   color: #fff;
   cursor: pointer;
@@ -88,5 +97,8 @@ h1 {
 .edit-icon,
 .delete-icon {
   cursor: pointer;
+  padding: 0.2rem;
+  color: #fff;
+  border-radius: 0.2rem;
 }
  
