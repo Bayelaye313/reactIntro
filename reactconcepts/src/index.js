@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+// eslint-disable-next-line
 import AppUiConcept from './App';
+// eslint-disable-next-line
 import AppReactivityConcept from './App2';
+// eslint-disable-next-line
+import App from './App';
+
+import App3 from './App3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <AppUiConcept /> */}
-    <AppReactivityConcept/>
+    {/* <AppReactivityConcept/> */}
+    <App3/>
   </React.StrictMode>
 );
 
