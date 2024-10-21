@@ -10,13 +10,16 @@ import AppReactivityConcept from './App2';
 import App from './App';
 
 import App3 from './App3';
+import ThemeProvider from './context/ThemeProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <AppUiConcept /> */}
     {/* <AppReactivityConcept/> */}
+    <ThemeProvider>
     <App3/>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

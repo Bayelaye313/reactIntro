@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Article from './useeffects/Article'
 import { useEffect } from 'react'
+import Header from './useeffects/Header'
 
 function App3() {
   const [viewArticle, setViewArticle] = useState(false)
@@ -24,7 +25,7 @@ function App3() {
   }, [])
   return (
     <div>
-      <h2>Comprende Hooks UseEffect </h2>
+      <Header title = 'Comprende Hooks UseEffect' />
       <button onClick={toggleView} > {viewArticle ?'Hide Article': 'See article'}  </button>
       <p> l'article ouvert {countView} fois </p>
       {
