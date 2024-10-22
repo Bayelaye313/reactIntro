@@ -4,10 +4,14 @@ import Balance from './components/Balance';
 import IncomesExpenses from './components/IncomesExpenses';
 import TransactionsList from './components/TransactionsList';
 import AddTransactions from './components/AddTransactions';
+import { useContext } from 'react';
+import GlobalProvider, { GlobalContext } from './context/GlobalContext';
+
+
 
 function App() {
   return (
-    <div >
+    <GlobalProvider >
       <Header/>
       <div className='container'>
         <Balance/>
@@ -16,7 +20,7 @@ function App() {
         <AddTransactions/>
 
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
