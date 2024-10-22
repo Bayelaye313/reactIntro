@@ -1,37 +1,36 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import CartReducer from "./CartReducer";
+// Définir les actions possibles
+const ADD_ITEM = "ADD_ITEM";
+const REMOVE_ITEM = "REMOVE_ITEM";
+const UPDATE_QUANTITY = "UPDATE_QUANTITY";
+const APPLY_DISCOUNT = "APPLY_DISCOUNT";
 
 function ShoppingCart() {
-  const [cartItems, setCartItems] = useState([]);
-  const [discount, setDiscount] = useState(0);
+  //   const [cartItems, setCartItems] = useState([]);
+  //   const [discount, setDiscount] = useState(0);
+  const initialState = { cartItems: [], discount: 0 };
+  const [state, dispatch] = useReducer(CartReducer, initialState);
 
   const addItemToCart = (item) => {
-    setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    dispatch({ type: ADD_ITEM, item });
   };
 
   const removeItemFromCart = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    dispatch({ type: REMOVE_ITEM, id });
   };
 
   const updateItemQuantity = (id, quantity) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id == id ? { ...item, quantity: quantity } : item
-      )
-    );
+    dispatch({ type: UPDATE_QUANTITY, id, quantity });
   };
 
   const applyDiscount = (discountCode) => {
-    if (discountCode === "SAVE20") {
-      setDiscount(20);
-    } else {
-      setDiscount(0);
-    }
+    dispatch({ type: APPLY_DISCOUNT, discountCode });
   };
 
   const total =
-    cartItems.reduce((acc, item) => {
-      acc + item.price * item.quantity;
-    }, 0) - discount;
+    state.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) -
+    state.discount;
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -47,7 +46,7 @@ function ShoppingCart() {
       </button>
 
       <ul>
-        {cartItems.map((item) => (
+        {state.cartItems.map((item) => (
           <li key={item.id}>
             {item.name} - {item.quantity} pcs
             <button
