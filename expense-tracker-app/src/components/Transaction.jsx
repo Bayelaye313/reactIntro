@@ -1,10 +1,20 @@
 import React from "react";
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, removeTransact }) => {
+  const sign = transaction.amount < 0 ? "-" : "+";
   return (
-    <li className="minus">
-      {transaction.text} <span>-${transaction.amount}</span>
-      <button className="delete-btn">x</button>
+    <li className={transaction.amount > 0 ? "plus" : "minus"}>
+      {transaction.text}{" "}
+      <span>
+        {" "}
+        {sign}${Math.abs(transaction.amount)}
+      </span>
+      <button
+        onClick={() => removeTransact(transaction.id)}
+        className="delete-btn"
+      >
+        x
+      </button>
     </li>
   );
 };
